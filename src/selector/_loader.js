@@ -1,7 +1,17 @@
-define(["../has", "require"],
-		function(has, require){
+define(["../has", "require","module"],function(has, require,module){
 
 "use strict";
+
+	if (require.isBrowser===false) { // for build,will be changed with better implementation. by LWF
+
+		return {
+	        load: function (name, req, onLoad, config) {
+	            onLoad();
+	        }			
+		};
+	}
+
+
 var testDiv = document.createElement("div");
 has.add("dom-qsa2.1", !!testDiv.querySelectorAll);
 has.add("dom-qsa3", function(){
@@ -13,6 +23,7 @@ has.add("dom-qsa3", function(){
 				return testDiv.querySelectorAll(".TEST:empty").length == 1;
 			}catch(e){}
 		});
+
 var fullEngine;
 var acme = "./acme", lite = "./lite";
 return {

@@ -241,7 +241,7 @@ define(["./kernel", "../has", "require", "module", "../json", "./lang", "./array
 								// since we're going to need dojo/i8n, add it to i18nDeps if not already there
 								if(!i18nDeps){
 									// don't have to map since that will occur when the dependency is resolved
-									i18nDeps = ["dojo/i18n"];
+									i18nDeps = ["dojo/i18n"]; 
 								}
 
 								// figure out if the bundle is xdomain; if so, add it to the i18nDepsSet

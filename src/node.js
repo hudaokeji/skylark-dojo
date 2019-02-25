@@ -1,4 +1,12 @@
-define(["./_base/kernel", "./has", "require"], function(kernel, has, require){
+define(["./_base/kernel", "./has", "require","module"], function(kernel, has, require,module){
+	if (require.isBrowser===false) { // for build,will be changed with better implementation. by LWF
+		return {
+	        load: function (name, req, onLoad, config) {
+	            onLoad();
+	        }			
+		};
+	}
+
 	var nodeRequire = kernel.global.require && kernel.global.require.nodeRequire;
 
 	if (!nodeRequire) {

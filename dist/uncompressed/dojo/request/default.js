@@ -1,8 +1,17 @@
 define([
 	'exports',
+	'module',
 	'require',
 	'../has'
-], function(exports, require, has){
+], function(exports, module, require, has){
+	if (require.isBrowser===false) { // for build,will be changed with better implementation. by LWF
+		return {
+	        load: function (name, req, onLoad, config) {
+	            onLoad();
+	        }			
+		};
+	}
+
 	var defId = has('config-requestProvider'),
 		platformId;
 

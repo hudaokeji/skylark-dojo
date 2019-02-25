@@ -1,6 +1,17 @@
-define(["./_base/kernel", "require", "./has", "./_base/array", "./_base/config", "./_base/lang", "./has!host-browser?./_base/xhr", "./json", "module"],
+define(["./_base/kernel", "require", "./has", "./_base/array", "./_base/config", "./_base/lang", "has!host-browser?./_base/xhr", "./json", "module"],
+
 	function(dojo, require, has, array, config, lang, xhr, json, module){
 
+	if (require.isBrowser===false) { // for build,will be changed with better implementation. by LWF
+		return {
+	        load: function (name, req, onLoad, config) {
+	            onLoad();
+	        }			
+		};
+	}
+
+	// module:
+	// module:
 	// module:
 	//		dojo/i18n
 

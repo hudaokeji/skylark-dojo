@@ -5,5 +5,5 @@
  * @link https://github.com/skylark-integration/dojo/
  * @license MIT
  */
-define(["exports","require","../has"],function(o,e,r){var t,n=r("config-requestProvider");r("host-browser")||r("host-webworker")?t="./xhr":r("host-node")&&(t="./node"),n||(n=t),o.getPlatformDefaultId=function(){return t},o.load=function(o,r,f,i){e(["platform"==o?t:n],function(o){f(o)})}});
+define(["exports","module","require","../has"],function(o,r,e,n){if(!1===e.isBrowser)return{load:function(o,r,e,n){e()}};var t,f=n("config-requestProvider");n("host-browser")||n("host-webworker")?t="./xhr":n("host-node")&&(t="./node"),f||(f=t),o.getPlatformDefaultId=function(){return t},o.load=function(o,r,n,i){e(["platform"==o?t:f],function(o){n(o)})}});
 //# sourceMappingURL=../sourcemaps/request/default.js.map
