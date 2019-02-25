@@ -1,0 +1,1 @@
+{"version":3,"sources":["cldr/nls/en-au/number.js"],"names":["define","currencyFormat"],"mappings":";;;;;;;AAAAA,QAGCC,eAAkB","file":"../../../../cldr/nls/en-au/number.js","sourcesContent":["define(\r\n//begin v1.x content\r\n{\r\n\t\"currencyFormat\": \"¤#,##0.00\"\r\n}\r\n//end v1.x content\r\n);"]}

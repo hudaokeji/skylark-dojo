@@ -1,0 +1,9 @@
+/**
+ * dojo - A version of dojo.js framework that ported to running on skylarkjs.
+ * @author Hudaokeji, Inc.
+ * @version v0.9.0
+ * @link https://github.com/skylark-integration/dojo/
+ * @license MIT
+ */
+define(["./has"],function(has){"use strict";var hasJSON="undefined"!=typeof JSON;if(has.add("json-parse",hasJSON),has.add("json-stringify",hasJSON&&'{"a":1}'==JSON.stringify({a:0},function(r,n){return n||1})),has("json-stringify"))return JSON;var escapeString=function(r){return('"'+r.replace(/(["\\])/g,"\\$1")+'"').replace(/[\f]/g,"\\f").replace(/[\b]/g,"\\b").replace(/[\n]/g,"\\n").replace(/[\t]/g,"\\t").replace(/[\r]/g,"\\r")};return{parse:has("json-parse")?JSON.parse:function(str,strict){if(strict&&!/^([\s\[\{]*(?:"(?:\\.|[^"])*"|-?\d[\d\.]*(?:[Ee][+-]?\d+)?|null|true|false|)[\s\]\}]*(?:,|:|$))+$/.test(str))throw new SyntaxError("Invalid characters in JSON");return eval("("+str+")")},stringify:function(r,n,e){var t;return"string"==typeof n&&(e=n,n=null),function r(i,a,s){n&&(i=n(s,i));var f,u=typeof i;if("number"==u)return isFinite(i)?i+"":"null";if("boolean"==u)return i+"";if(null===i)return"null";if("string"==typeof i)return escapeString(i);if("function"==u||"undefined"==u)return t;if("function"==typeof i.toJSON)return r(i.toJSON(s),a,s);if(i instanceof Date)return'"{FullYear}-{Month+}-{Date}T{Hours}:{Minutes}:{Seconds}Z"'.replace(/\{(\w+)(\+)?\}/g,function(r,n,e){var t=i["getUTC"+n]()+(e?1:0);return t<10?"0"+t:t});if(i.valueOf()!==i)return r(i.valueOf(),a,s);var o=e?a+e:"",c=e?" ":"",l=e?"\n":"";if(i instanceof Array){var p=i.length,g=[];for(s=0;s<p;s++)"string"!=typeof(f=r(i[s],o,s))&&(f="null"),g.push(l+o+f);return"["+g.join(",")+l+a+"]"}var h=[];for(s in i){var y;if(i.hasOwnProperty(s)){if("number"==typeof s)y='"'+s+'"';else{if("string"!=typeof s)continue;y=escapeString(s)}if("string"!=typeof(f=r(i[s],o,s)))continue;h.push(l+o+y+":"+c+f)}}return"{"+h.join(",")+l+a+"}"}(r,"","")}}});
+//# sourceMappingURL=sourcemaps/json.js.map

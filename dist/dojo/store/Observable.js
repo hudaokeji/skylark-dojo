@@ -1,0 +1,9 @@
+/**
+ * dojo - A version of dojo.js framework that ported to running on skylarkjs.
+ * @author Hudaokeji, Inc.
+ * @version v0.9.0
+ * @link https://github.com/skylark-integration/dojo/
+ * @license MIT
+ */
+define(["../_base/kernel","../_base/lang","../when","../_base/array"],function(e,t,n,r){var i=function(e){var i=[],o=0;(e=t.delegate(e)).notify=function(e,t){o++;for(var n=i.slice(),r=0,a=n.length;r<a;r++)n[r](e,t)};var a,f=e.query;function u(t,r){var i=e[t];i&&(e[t]=function(o){var f;if("put"===t&&(f=e.getIdentity(o)),a)return i.apply(this,arguments);a=!0;try{var u=i.apply(this,arguments);return n(u,function(e){r("object"==typeof e&&e||o,f)}),u}finally{a=!1}})}return e.query=function(a,u){u=u||{};var c=f.apply(this,arguments);if(c&&c.forEach){var s=t.mixin({},u);delete s.start,delete s.count;var l,v=e.queryEngine&&e.queryEngine(a,s),y=o,d=[];c.observe=function(t,a){1==d.push(t)&&i.push(l=function(t,i){n(c,function(n){var f,c,s,l=n.length!=u.count;if(++y!=o)throw new Error("Query is out of date, you must observe() the query prior to any data modifications");var p,h=-1,g=-1;if(void 0!==i)for(f=0,c=n.length;f<c;f++){var b=n[f];if(e.getIdentity(b)==i){p=b,h=f,!v&&t||n.splice(f,1);break}}if(v){if(t&&(v.matches?v.matches(t):v([t]).length)){var m=h>-1?h:n.length;n.splice(m,0,t),g=r.indexOf(v(n),t),n.splice(m,1),u.start&&0==g||!l&&g==n.length?g=-1:n.splice(g,0,t)}}else t&&(void 0!==i?g=h:u.start||(g=e.defaultIndex||0,n.splice(g,0,t)));if((h>-1||g>-1)&&(a||!v||h!=g)){var q=d.slice();for(f=0;s=q[f];f++)s(t||p,h,g)}})});var f={};return f.remove=f.cancel=function(){var e=r.indexOf(d,t);e>-1&&(d.splice(e,1),d.length||i.splice(r.indexOf(i,l),1))},f}}return c},u("put",function(t,n){e.notify(t,n)}),u("add",function(t){e.notify(t)}),u("remove",function(t){e.notify(void 0,t)}),e};return t.setObject("dojo.store.Observable",i),i});
+//# sourceMappingURL=../sourcemaps/store/Observable.js.map

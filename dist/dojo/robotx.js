@@ -1,0 +1,9 @@
+/**
+ * dojo - A version of dojo.js framework that ported to running on skylarkjs.
+ * @author Hudaokeji, Inc.
+ * @version v0.9.0
+ * @link https://github.com/skylark-integration/dojo/
+ * @license MIT
+ */
+define(["require","doh/main","./aspect","./dom-construct","./dom-style","./_base/kernel","./_base/lang","./on","./robot","./sniff","./_base/window"],function(e,t,o,n,i,d,r,c,u,a,m){d.experimental("dojo.robotx");var s,l=null;function b(){u._updateDocument(),l.contentWindow.require?l.contentWindow.require(["dojo/ready"],function(e){e(1/0,function(){setTimeout(function(){s.resolve(!0)},500)})}):s.resolve(!0)}return d.config.debugHeight=d.config.debugHeight||200,r.mixin(u,{_updateDocument:function(){d.setContext(l.contentWindow,l.contentWindow.document),u.window=l.contentWindow,u.doc=l.contentWindow.document;var e=d.global;e.dojo&&(d.publish=e.dojo.publish,d.subscribe=e.dojo.subscribe,d.connectPublisher=e.dojo.connectPublisher)},initRobot:function(o){t.registerGroup("initialize robot",{name:"load "+o,timeout:1e5,runTest:function(){return s=new t.Deferred,function(t){e(["./domReady!"],function(){var e={overflow:"hidden",margin:"0px",borderWidth:"0px",height:"100%",width:"100%"};i.set(document.documentElement,e),i.set(document.body,e),(l=document.createElement("iframe")).setAttribute("ALLOWTRANSPARENCY","true"),l.scrolling=a("ie")?"yes":"auto";var o="BackCompat"==document.compatMode?document.body:document.documentElement,d=(document.getElementById("firebug")||{}).offsetHeight||0;i.set(l,{border:"0px none",padding:"0px",margin:"0px",width:"100%",height:d?o.clientHeight-d+"px":"100%"}),l.src=t,void 0!==l.attachEvent?l.attachEvent("onload",b):c(l,"load",b),n.place(l,m.body(),"first")})}(o),s}})},waitForPageToLoad:function(e){return s=new t.Deferred,e(),s}}),u});
+//# sourceMappingURL=sourcemaps/robotx.js.map

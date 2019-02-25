@@ -1,0 +1,1 @@
+{"version":3,"sources":["cldr/nls/fr-ch/currency.js"],"names":["define","CHF_symbol"],"mappings":";;;;;;;AAAAA,QAGCC,WAAc","file":"../../../../cldr/nls/fr-ch/currency.js","sourcesContent":["define(\r\n//begin v1.x content\r\n{\r\n\t\"CHF_symbol\": \"CHF\"\r\n}\r\n//end v1.x content\r\n);"]}

@@ -1,5 +1,5 @@
 define(
-"dojo/cldr/nls/pt-pt/islamic", //begin v1.x content
+//begin v1.x content
 {
 	"days-standAlone-short": [
 		"do",

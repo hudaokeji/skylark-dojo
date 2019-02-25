@@ -1,0 +1,1 @@
+{"version":3,"sources":["cldr/nls/en-ca/currency.js"],"names":["define","CAD_symbol","USD_symbol"],"mappings":";;;;;;;AAAAA,QAGCC,WAAc,IACdC,WAAc","file":"../../../../cldr/nls/en-ca/currency.js","sourcesContent":["define(\r\n//begin v1.x content\r\n{\r\n\t\"CAD_symbol\": \"$\",\r\n\t\"USD_symbol\": \"US$\"\r\n}\r\n//end v1.x content\r\n);"]}

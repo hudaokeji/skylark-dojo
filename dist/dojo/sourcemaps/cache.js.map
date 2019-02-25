@@ -1,0 +1,1 @@
+{"version":3,"sources":["cache.js"],"names":["define","dojo","cache"],"mappings":";;;;;;;AAAAA,QAAQ,iBAAkB,UAAW,SAASC,GAK7C,OAAOA,EAAKC","file":"../cache.js","sourcesContent":["define([\"./_base/kernel\", \"./text\"], function(dojo){\r\n\t// module:\r\n\t//\t\tdojo/cache\r\n\r\n\t// dojo.cache is defined in dojo/text\r\n\treturn dojo.cache;\r\n});\r\n"]}

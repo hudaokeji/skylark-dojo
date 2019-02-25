@@ -1,5 +1,5 @@
 define(
-"dojo/cldr/nls/zh/ethiopic", //begin v1.x content
+//begin v1.x content
 {
 	"field-sat-relative+0": "本周六",
 	"field-sat-relative+1": "下周六",
