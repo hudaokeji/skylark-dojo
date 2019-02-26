@@ -12345,18 +12345,25 @@ define('dojo/query',["./_base/kernel", "./has", "./dom", "./on", "./_base/array"
 		return NodeList(array);	// dojo/NodeList
 	});
 
-	query.load = function(id, parentRequire, loaded){
-		// summary:
-		//		can be used as AMD plugin to conditionally load new query engine
-		// example:
-		//	|	require(["dojo/query!custom"], function(qsa){
-		//	|		// loaded selector/custom.js as engine
-		//	|		qsa("#foobar").forEach(...);
-		//	|	});
-		loader.load(id, parentRequire, function(engine){
-			loaded(queryForEngine(engine, NodeList));
-		});
-	};
+
+	if (require.isBrowser===false) { // for build,will be changed with better implementation. by LWF
+		query.load = function (name, req, onLoad, config) {
+	        onLoad();
+	    };		
+	} else {
+		query.load = function(id, parentRequire, loaded){
+			// summary:
+			//		can be used as AMD plugin to conditionally load new query engine
+			// example:
+			//	|	require(["dojo/query!custom"], function(qsa){
+			//	|		// loaded selector/custom.js as engine
+			//	|		qsa("#foobar").forEach(...);
+			//	|	});
+			loader.load(id, parentRequire, function(engine){
+				loaded(queryForEngine(engine, NodeList));
+			});
+		};
+	}
 
 	dojo._filterQueryResult = query._filterResult = function(nodes, selector, root){
 		return new NodeList(query.filter(nodes, selector, root));
