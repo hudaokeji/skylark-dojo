@@ -603,7 +603,9 @@ define(["./_base/kernel", "./has", "./dom", "./on", "./_base/array", "./_base/la
 			});
 		};
 		if(typeof engine != "function"){
-			var search = engine.search;
+			var search = engine && engine.search || function(el,selector) {
+				return el.querySelectorAll(selector);
+			};
 			engine = function(selector, root){
 				// Slick does it backwards (or everyone else does it backwards, probably the latter)
 				return search(root || document, selector);
