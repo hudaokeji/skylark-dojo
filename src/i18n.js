@@ -1,4 +1,4 @@
-define(["./_base/kernel", "require", "./has", "./_base/array", "./_base/config", "./_base/lang", "has!host-browser?./_base/xhr", "./json", "module"],
+define(["./_base/kernel", "require", "./has", "./_base/array", "./_base/config", "./_base/lang", "./has!host-browser?./_base/xhr", "./json", "module"],
 
 	function(dojo, require, has, array, config, lang, xhr, json, module){
 
