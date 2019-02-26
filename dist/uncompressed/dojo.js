@@ -8835,6 +8835,13 @@ return date;
 define('dojo/text',["./_base/kernel", "require", "./has", "./has!host-browser?./request"], function(dojo, require, has, request){
 	// module:
 	//		dojo/text
+	if (require.isBrowser===false) { // for build,will be changed with better implementation. by LWF
+		return {
+	        load: function (name, req, onLoad, config) {
+	            onLoad();
+	        }			
+		};
+	}
 
 	var getText;
 	if(has("host-browser")){
