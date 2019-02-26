@@ -12243,13 +12243,13 @@ define('dojo/query',["./_base/kernel", "./has", "./dom", "./on", "./_base/array"
 			}
 			return new NodeList(results);
 		};
-		query.matches = engine.match || function(node, selector, root){
+		query.matches = engine && engine.match || function(node, selector, root){
 			// summary:
 			//		Test to see if a node matches a selector
 			return query.filter([node], selector, root).length > 0;
 		};
 		// the engine provides a filtering function, use it to for matching
-		query.filter = engine.filter || function(nodes, selector, root){
+		query.filter = engine && engine.filter || function(nodes, selector, root){
 			// summary:
 			//		Filters an array of nodes. Note that this does not guarantee to return a NodeList, just an array.
 			return query(selector, root).filter(function(node){
