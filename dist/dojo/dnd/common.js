@@ -5,5 +5,5 @@
  * @link https://github.com/skylark-integration/dojo/
  * @license MIT
  */
-define(["../sniff","../_base/kernel","../_base/lang","../dom"],function(e,t,n,a){var o=n.getObject("dojo.dnd",!0);return o.getCopyKeyState=function(t){return t[e("mac")?"metaKey":"ctrlKey"]},o._uniqueId=0,o.getUniqueId=function(){var e;do{e=t._scopeName+"Unique"+ ++o._uniqueId}while(a.byId(e));return e},o._empty={},o.isFormElement=function(e){var t=e.target;return 3==t.nodeType&&(t=t.parentNode)," a button textarea input select option ".indexOf(" "+t.tagName.toLowerCase()+" ")>=0},o});
+define(["../sniff","../_base/kernel","../_base/lang","../dom"],function(e,t,n,a){var exports=n.getObject("dojo.dnd",!0);return exports.getCopyKeyState=function(t){return t[e("mac")?"metaKey":"ctrlKey"]},exports._uniqueId=0,exports.getUniqueId=function(){var e;do{e=t._scopeName+"Unique"+ ++exports._uniqueId}while(a.byId(e));return e},exports._empty={},exports.isFormElement=function(e){var t=e.target;return 3==t.nodeType&&(t=t.parentNode)," a button textarea input select option ".indexOf(" "+t.tagName.toLowerCase()+" ")>=0},exports});
 //# sourceMappingURL=../sourcemaps/dnd/common.js.map
