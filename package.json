@@ -24,7 +24,7 @@
     "dist/",
     "src/",
     "skins/",
-    "thems/",
+    "themes/"
   ],  
   "license": "MIT",
   "dependencies": {
